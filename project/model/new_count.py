@@ -5,5 +5,5 @@ class B(A):
         return a - b 
 
 
-resule = B().add(2,5)
+resule = B().add(2,8)
 print(resule)
