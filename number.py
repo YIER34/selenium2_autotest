@@ -23,7 +23,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 driver = webdriver.Chrome()
 driver.implicitly_wait(10)
 driver.get("https://test.igxpt.com/login")
-
+cookies = driver.get_cookies()
 print(cookies)
 driver.find_element_by_link_text("登录").click()
 username = driver.find_element_by_id('username')
@@ -58,8 +58,8 @@ driver.add_cookie({'name':'Hm_lpvt_3e059416b2038da3620af3bca51c48b8','value':'15
 driver.add_cookie({'name':'Hm_lvt_3e059416b2038da3620af3bca51c48b8','value':'1597827845'})
 
 # 再次访问网站，将会自动登录
-driver.get("https://test.igxpt.com/login")
-print(cookies)
-sleep(5)
-driver.quit()
+# driver.get("https://test.igxpt.com/login")
+# print(cookies)
+# sleep(5)
+# driver.quit()
 

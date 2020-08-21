@@ -3,10 +3,12 @@
 # 调用JavaScript
 
 # 窗口截图 get_screenshot_as_file()
+
+# 参数化搜索关键字
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from time import ctime,sleep
-driver = webdriver.Chrome(executable_path='chromedriver.exe')
+# driver = webdriver.Chrome(executable_path='chromedriver.exe')
 
 '''
 # 1. 显示等待
@@ -79,7 +81,7 @@ text = "输入的内容"
 js = "var sum=document.getElemantById('id');sum.value='" + text + "';"
 driver.execute_script(js)
 '''
-
+'''
 # 5. 窗口截图
 driver.get("http://www.baidu.com")
 
@@ -89,3 +91,16 @@ sleep(2)
 # 截取当前窗口，并指定截图图片的保存位置
 driver.get_screenshot_as_file("F://selenium2_autotest/baidu_img.png")
 driver.quit()
+'''
+
+# 5. 参数化搜索关键字
+search_text = ['python','中文','123']
+for text in search_text:
+
+    driver = webdriver.Chrome()
+    driver.implicitly_wait(10)
+    driver.get("http://www.baidu.com")
+    driver.find_element_by_id("kw").send_keys(text)
+    driver.find_element_by_id("su").click()
+    sleep(2)
+    driver.quit()
