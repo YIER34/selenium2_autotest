@@ -1,7 +1,7 @@
 # fixtures
-setUpModule/tearDownModule
-setUpClass/tearDownClass
-setUp/tearDown
+# setUpModule/tearDownModule  在整个模块的开始和结束被执行
+# setUpClass/tearDownClass  在测试类的开始和结束被执行，需要用@classmethod来装饰，并传参cls
+# setUp/tearDown  在测试用例的开始和结束被执行
 import unittest
 
 def setUpModule():
